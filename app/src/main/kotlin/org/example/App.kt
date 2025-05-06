@@ -1,5 +1,11 @@
 package org.example
 
+fun calcular(a: Int, b: Int, c: Int) {
+    for (x in -5..5){
+        val resultado = a * x*x + b * x + c
+        println("Valor en y cuando x es $x: $resultado")
+    }
+}
 fun main() {
     val a = 1
     val b = 3
@@ -9,4 +15,6 @@ fun main() {
         return
     }
     println("$a x² + $b x + $c")
+
+    calcular(a, b, c)
 }
