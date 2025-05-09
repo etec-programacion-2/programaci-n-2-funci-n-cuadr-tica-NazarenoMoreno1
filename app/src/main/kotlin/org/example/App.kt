@@ -1,4 +1,5 @@
 package org.example
+
 /**
  * Resuelve ecuaciones cuadráticas de esta forma ax² + bx + c = 0
  * Calcula discriminante y raíces de la ecuación
