@@ -7,14 +7,15 @@ fun calcular(a: Int, b: Int, c: Int) {
     }
 }
 
-fun discriminante (a: Int, b: Int, c: Int){
+fun discriminante (a: Int, b: Int, c: Int): Int {
     val result = b * b - 4 * a * c
     println("La discriminante es igual a: $result")
+    return result
 }
 fun raices (a: Int, b: Int, discrimi: Int){
-    val resulta1 = (-b + Math.sqrt(discrimi))/2*a
-    val resulta2 = (-b - Math.sqrt(discrimi))/2*a
-    println("Las raices son x1= $resulta1 y x2 = $resulta2")
+    val resulta1 = (-b + Math.sqrt(discrimi.toDouble()))/(2*a)
+    val resulta2 = (-b - Math.sqrt(discrimi.toDouble()))/(2*a)
+    println("Las raices son x1= ${"%.2f".format(resulta1)} y x2 = ${"%.2f".format(resulta2)} ")
 }
 fun main() {
     val a = 1
@@ -27,5 +28,12 @@ fun main() {
     println("$a x² + $b x + $c")
 
     calcular(a, b, c)
-    var discrimi = discriminante(a, b, c)
+
+    val discrimi = discriminante(a, b, c)
+
+    if (discrimi < 0) {
+        println("No tiene raíces reales")
+    } else {
+        raices(a, b, discrimi)
+    }
 }
